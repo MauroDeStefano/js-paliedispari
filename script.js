@@ -15,35 +15,50 @@ function checkPalindrome(str) {
   for (let i = 0; i < len / 2; i++) {
 
       if (str[i] !== str[len - 1 - i]) {
-          return 'not è palindromo';
+          console.log(str[i]);
+        return 'not è palindromo';
+         
       }
   }
   return 'è palindromo';
 }
 
-let prova = "palindrordnilap"
+
+let prova = "otto";
 
 let risultato = checkPalindrome(prova);
 
 console.log(risultato);
 
-let risultatoDadi = PariODispari("dispari", 4);
+let sceltaPoD = prompt("Scegli tra pari o dispari");
+let scletaNum = prompt("scegli un numero tra uno o 5")
 
-console.log(risultatoDadi);
+let risultatoDadi = pariODispari(sceltaPoD, scletaNum, randomNumber(5,1));
 
-function PariODispari(scelta, numero){
-   
-  sceltaLet = "pari";
+console.log("hai scelto", sceltaPoD);
 
-  if(scelta === "dispari"){
-    sceltaLet = "dispari";
-    console.log(sceltaLet);
-  }else if (sceltaLet != "dispari" && sceltaLet != "pari"){
-    alert("scrivere Pari o Dispari, la scelta effettuata non corrisponde");
-    console.log(sceltaLet);
+
+console.log("risultato", risultatoDadi);
+
+function pariODispari(choiceUser, numUser, numPc){
+
+  
+  if((choiceUser != "pari") && (choiceUser != "dispari")){
+    alert("INSERISCI UNA SCELTA VALIDA");
+    return "ricarica la pagina";
+  }else{
+
+    if((numUser + numPc) % 2){
+      if(choiceUser === "dispari")
+      return "hai perso"; 
+    }else {
+      return "hai vinto";
+    }
+
   }
 
+};
 
-}
-
-
+function randomNumber(max, min){
+  num = Math.floor(Math.random(1*max) + min);
+};
