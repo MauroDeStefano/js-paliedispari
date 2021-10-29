@@ -8,16 +8,19 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
+
+// 
+
 function checkPalindrome(str) {
 
   const len = str.length;
 
-  for (let i = 0; i < len / 2; i++) {
+  for (let i = 0; i < len / 2; i++){
 
       if (str[i] !== str[len - 1 - i]) {
           console.log(str[i]);
         return 'not è palindromo';
-         
+        
       }
   }
   return 'è palindromo';
@@ -29,6 +32,10 @@ let prova = "otto";
 let risultato = checkPalindrome(prova);
 
 console.log(risultato);
+
+
+//esercizio PARI O DISPARI
+
 
 let sceltaPoD = prompt("Scegli tra pari o dispari");
 let scletaNum = prompt("scegli un numero tra uno o 5")
@@ -50,9 +57,9 @@ function pariODispari(choiceUser, numUser, numPc){
 
     if((numUser + numPc) % 2){
       if(choiceUser === "dispari")
-      return "hai perso"; 
+      return "hai vinto"; 
     }else {
-      return "hai vinto";
+      return "hai perso";
     }
 
   }
